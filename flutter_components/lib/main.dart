@@ -12,9 +12,11 @@ class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _State createState() => _State();
 }
 
+// ignore: constant_identifier_names
 enum Answers { YER, NO, MAYBE }
 
 class _State extends State<MyApp> {
@@ -99,15 +101,17 @@ class _State extends State<MyApp> {
       firstDate: DateTime(2024),
       lastDate: DateTime(2025),
     );
-    if (picked != null) setState(() => _valueDatePicker = picked.toString());
+    if (picked != null) {
+      setState(() => _valueDatePicker = picked.toString());
+    }
     return null;
   }
 
   Widget makeRadios() {
     List<Widget> list = [];
     for (int i = 0; i < 3; i++) {
-      list.add(
-          Radio(value: i, groupValue: _valueRadio1, onChanged: _setRadioValue));
+      list.add(Radio(
+          value: i, groupValue: _valueRadio1, onChanged: _setRadioValue));
     }
     Column column = Column(
       children: list,
@@ -155,7 +159,8 @@ class _State extends State<MyApp> {
                 const Text(
                   'Some info here',
                   style: TextStyle(
-                      color: Colors.orangeAccent, fontWeight: FontWeight.bold),
+                      color: Colors.orangeAccent,
+                      fontWeight: FontWeight.bold),
                 ),
                 TextButton(
                     onPressed: () => Navigator.pop(context),
@@ -256,7 +261,8 @@ class _State extends State<MyApp> {
         backgroundColor: Colors.limeAccent,
         actions: <Widget>[
           IconButton(icon: const Icon(Icons.add), onPressed: _addAppBar),
-          IconButton(icon: const Icon(Icons.remove), onPressed: _removeAppBar),
+          IconButton(
+              icon: const Icon(Icons.remove), onPressed: _removeAppBar),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -331,7 +337,8 @@ class _State extends State<MyApp> {
                   onSubmitted: _onSubmit,
                 ),
                 // Checkbox
-                Checkbox(value: _valueCheckbox1, onChanged: _checkboxChanged),
+                Checkbox(
+                    value: _valueCheckbox1, onChanged: _checkboxChanged),
                 CheckboxListTile(
                   value: _valueCheckbox2,
                   onChanged: _checkboxChanged2,
@@ -351,7 +358,8 @@ class _State extends State<MyApp> {
                     onChanged: _onChangeSwitch2,
                     title: const Text('Hello World',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.red))),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.red))),
                 // Slider
                 Text('Value: ${(_valueSlider * 100).round()}'),
                 Slider(value: _valueSlider, onChanged: _setSliderValue),
