@@ -15,6 +15,9 @@
       <excludeFolder url="file://$MODULE_DIR$/expense_tracker/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/expense_tracker/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/expense_tracker/build" />
+      <excludeFolder url="file://$MODULE_DIR$/meals_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/meals_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/meals_app/build" />
       <excludeFolder url="file://$MODULE_DIR$/quiz_app/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/quiz_app/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/quiz_app/build" />
