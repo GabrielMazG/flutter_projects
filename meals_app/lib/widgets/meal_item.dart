@@ -69,6 +69,20 @@ class MealItem extends StatelessWidget {
                           label: affordabilityText,
                         ),
                       ],
+                    ),
+                    const SizedBox(width: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (typeText.isNotEmpty)
+                          Text(
+                            typeText,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                      ],
                     )
                   ],
                 ),
@@ -88,5 +102,14 @@ class MealItem extends StatelessWidget {
   String get affordabilityText {
     return meal.affordability.name[0].toUpperCase() +
         meal.affordability.name.substring(1);
+  }
+
+  String get typeText {
+    String type = '';
+    if (meal.isGlutenFree) type = 'GlutenFree ';
+    if (meal.isLactoseFree) type = '${type}LactoseFree ';
+    if (meal.isVegetarian) type = '${type}Vegetarian ';
+    if (meal.isVegan) type = '${type}Vegan';
+    return type;
   }
 }

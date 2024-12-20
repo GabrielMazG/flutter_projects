@@ -5,7 +5,7 @@ import 'package:meals_app/screens/tabs.dart';
 final theme = ThemeData(
   useMaterial3: true,
   colorScheme: ColorScheme.fromSeed(
-    brightness: Brightness.light,
+    brightness: Brightness.dark,
     seedColor: const Color.fromARGB(255, 255, 248, 200),
   ),
   textTheme: GoogleFonts.latoTextTheme(),
