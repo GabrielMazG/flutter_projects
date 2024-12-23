@@ -78,7 +78,7 @@ class MealItem extends StatelessWidget {
                           Text(
                             typeText,
                             style: const TextStyle(
-                              color: Colors.white,
+                              color: Colors.cyanAccent,
                               fontSize: 12,
                             ),
                           ),
@@ -105,11 +105,17 @@ class MealItem extends StatelessWidget {
   }
 
   String get typeText {
+    if (!meal.isGlutenFree &&
+        !meal.isLactoseFree &&
+        !meal.isVegetarian &&
+        !meal.isVegan) {
+      return "";
+    }
     String type = '';
-    if (meal.isGlutenFree) type = 'GlutenFree ';
-    if (meal.isLactoseFree) type = '${type}LactoseFree ';
-    if (meal.isVegetarian) type = '${type}Vegetarian ';
-    if (meal.isVegan) type = '${type}Vegan';
-    return type;
+    if (meal.isGlutenFree) type = '/ GlutenFree';
+    if (meal.isLactoseFree) type = '$type / LactoseFree';
+    if (meal.isVegetarian) type = '$type / Vegetarian';
+    if (meal.isVegan) type = '$type / Vegan';
+    return '$type /';
   }
 }
