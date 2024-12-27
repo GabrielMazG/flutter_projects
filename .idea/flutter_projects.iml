@@ -45,6 +45,9 @@
       <excludeFolder url="file://$MODULE_DIR$/meals_app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/meals_app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/meals_app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/shopping_list_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/shopping_list_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/shopping_list_app/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
