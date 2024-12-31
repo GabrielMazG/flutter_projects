@@ -21,7 +21,7 @@ class _NewItemState extends State<NewItem> {
   var _enteredName = '';
   var _enteredQuantity = 1;
   var _selectedCategory = categories[Categories.vegetables]!;
-  var _isSendign = false;
+  var _isSending = false;
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +112,7 @@ class _NewItemState extends State<NewItem> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
-                    onPressed: _isSendign
+                    onPressed: _isSending
                         ? null
                         : () {
                             _formKey.currentState!.reset();
@@ -120,8 +120,8 @@ class _NewItemState extends State<NewItem> {
                     child: const Text('Reset'),
                   ),
                   ElevatedButton(
-                    onPressed: _isSendign ? null : _saveItem,
-                    child: _isSendign
+                    onPressed: _isSending ? null : _saveItem,
+                    child: _isSending
                         ? const SizedBox(
                             height: 16,
                             width: 16,
@@ -142,7 +142,7 @@ class _NewItemState extends State<NewItem> {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       setState(() {
-        _isSendign = true;
+        _isSending = true;
       });
       final url = Uri.https(
         'flutter-projects-c75cf-default-rtdb.firebaseio.com',
