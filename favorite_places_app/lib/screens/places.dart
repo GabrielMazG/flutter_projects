@@ -22,7 +22,10 @@ class PlacesScreen extends ConsumerWidget {
     );
 
     if (userPlaces.isNotEmpty) {
-      content = PlacesList(places: userPlaces);
+      content = Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: PlacesList(places: userPlaces),
+      );
     }
 
     return Scaffold(
