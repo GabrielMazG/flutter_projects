@@ -44,8 +44,8 @@ class Chart extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         gradient: LinearGradient(
           colors: [
-            scheme.onSecondary.withOpacity(0.7),
-            scheme.onSecondary.withOpacity(0.0)
+            scheme.onSecondary.withValues(alpha:0.7),
+            scheme.onSecondary.withValues(alpha:0.0)
           ],
           begin: Alignment.bottomCenter,
           end: Alignment.topCenter,

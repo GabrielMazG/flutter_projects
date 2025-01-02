@@ -33,6 +33,9 @@
       <excludeFolder url="file://$MODULE_DIR$/quiz_app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/quiz_app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/quiz_app/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/favorite_places_app/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/favorite_places_app/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/favorite_places_app/build" />
       <excludeFolder url="file://$MODULE_DIR$/meals_app/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/meals_app/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/meals_app/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/build" />
