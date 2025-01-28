@@ -1,4 +1,8 @@
+import 'dart:io';
+
+import 'package:chat_app/widgets/user_image_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 final _firebase = FirebaseAuth.instance;
@@ -17,6 +21,7 @@ class _AuthScreenState extends State<AuthScreen> {
   var _isLogin = true;
   var _enteredEmail = '';
   var _enteredPassword = '';
+  File? _selectedImage;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +52,12 @@ class _AuthScreenState extends State<AuthScreen> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
+                          if (!_isLogin)
+                            UserImagePicker(
+                              onPickImage: (pickedImage) {
+                                _selectedImage = pickedImage;
+                              },
+                            ),
                           TextFormField(
                             decoration: InputDecoration(
                               labelText: 'Email Address',
@@ -114,7 +125,9 @@ class _AuthScreenState extends State<AuthScreen> {
 
   void _submit() async {
     final isValid = _formKey.currentState!.validate();
-    if (!isValid) return;
+
+    if (!isValid || !_isLogin && _selectedImage == null) return;
+
     _formKey.currentState!.save();
     try {
       if (_isLogin) {
@@ -123,6 +136,14 @@ class _AuthScreenState extends State<AuthScreen> {
       } else {
         final userCredential = await _firebase.createUserWithEmailAndPassword(
             email: _enteredEmail, password: _enteredPassword);
+
+        final storageRef = FirebaseStorage.instance
+            .ref()
+            .child('user_images')
+            .child('${userCredential.user!.uid}.jpg');
+
+        storageRef.putFile(_selectedImage!);
+        final imageUrl = await storageRef.getDownloadURL();
       }
     } on FirebaseAuthException catch (error) {
       if (error.code == 'email-already-in-use') {
